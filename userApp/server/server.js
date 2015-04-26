@@ -1,3 +1,14 @@
+if (ServiceConfiguration.configurations.find({
+    service: 'facebook'
+  }).count() === 0) {
+  ServiceConfiguration.configurations.insert({
+    service: 'facebook',
+    appId: 'OAuth-credentials-from-facebook',
+    secret: 'OAuth-credentials-from-facebook',
+    loginStyle: 'popup'
+  });
+}
+
 Accounts.onCreateUser(function (options, user) {
   if (options.profile) {
     user.profile = options.profile;
