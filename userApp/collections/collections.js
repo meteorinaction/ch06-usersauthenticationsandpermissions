@@ -22,5 +22,9 @@ MessagesCollection.deny({
       console.log('all fields good');
       return false
     }
+  },
+  remove: function (userId, doc) {
+    return doc.recipient !== userId;
   }
+
 });
