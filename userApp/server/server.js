@@ -4,7 +4,7 @@ Accounts.onCreateUser(function (options, user) {
   } else {
     user.profile = {};
   }
-  user.profile.rank = "White belt";
+  user.profile.rank = 'White belt';
   if (options.email) {
     Meteor.setTimeout(function () {
       Accounts.sendVerificationEmail(user._id);
