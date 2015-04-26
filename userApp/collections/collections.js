@@ -7,7 +7,7 @@ MessagesCollection.allow({
     return true;
   },
   remove: function (userId, doc) {
-    return true;
+    return doc._id === userId;
   }
 });
 
@@ -26,5 +26,4 @@ MessagesCollection.deny({
   remove: function (userId, doc) {
     return doc.recipient !== userId;
   }
-
 });
