@@ -7,7 +7,7 @@ MessagesCollection.allow({
     return true;
   },
   remove: function (userId, doc) {
-    return doc._id === userId;
+    return doc.recipient === userId;
   }
 });
 
@@ -25,5 +25,11 @@ MessagesCollection.deny({
   },
   remove: function (userId, doc) {
     return doc.recipient !== userId;
+  }
+});
+
+Meteor.users.allow({
+  remove: function (userId, doc) {
+    return doc._id === userId;
   }
 });
