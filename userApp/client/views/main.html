@@ -1,0 +1,15 @@
+<template name="main">
+  {{#if currentUser}}
+  <div class="row">
+    <div class="col-md-8">
+      {{#with selectedUser}} {{> userProfile}} {{else}} Select a user. {{/with}}
+    </div>
+
+    <div class="col-md-4">
+      {{> userList}}
+    </div>
+  </div>
+  {{else}}
+  <p>Please log in.</p>
+  {{/if}}
+</template>

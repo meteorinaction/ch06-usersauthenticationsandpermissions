@@ -1,0 +1,24 @@
+<template name="userProfile">
+  {{#with userData}}
+  <h2>{{username}} {{profile.name}}</h2>
+
+  <p>
+    <strong>Rank:</strong> {{profile.rank}}
+  </p>
+  {{#if eq currentUser._id _id}}
+  <button id="delete-user">Delete my account</button>
+  {{/if}} {{> messageBoard}} {{/with}}
+</template>
+
+<template name="userList">
+  <h2>User list</h2>
+  <ul>
+    {{#each users}}
+    <li>
+      <a href="#" class="user" data-id="{{_id}}">
+                    {{username}} {{profile.name}}
+                </a>
+    </li>
+    {{/each}}
+  </ul>
+</template>

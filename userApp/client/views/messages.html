@@ -1,0 +1,27 @@
+<template name="messageBoard">
+  <div class="message-board">
+    <h3>Messages</h3>
+    {{> messageForm }}
+    <ul>
+      {{#each messages}} {{> message}} {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="message">
+  <li>
+    <strong>{{getUserName sender}}</strong>:
+    <br/> {{message}}
+    <br/>
+    <span class="small">{{formatDate timestamp}}</span>
+    <button class="bt btn-delete btn-xs" data-id="{{_id}}">remove</button>
+  </li>
+</template>
+
+<template name="messageForm">
+  <p>
+    Leave a message:
+    <input type="text" id="message" name="message" placeholder="Type your message here" />
+    <button id="sendmessage">Send</button>
+  </p>
+</template>
