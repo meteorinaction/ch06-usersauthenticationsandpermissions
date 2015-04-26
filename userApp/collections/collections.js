@@ -1,7 +1,7 @@
 MessagesCollection = new Mongo.Collection('messages');
 MessagesCollection.allow({
   insert: function (userId, doc) {
-    return true;
+    return userId;
   },
   update: function (userId, doc) {
     return true;
